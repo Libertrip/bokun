@@ -14,7 +14,7 @@ defmodule Bokun do
   end
 
   def post_request(endpoint, body \\ [], params \\ []) do
-    Bokun.post!(endpoint, body, parse_headers("POST", endpoint, params), params)
+    Bokun.post!(endpoint, Poison.encode!(body), parse_headers("POST", endpoint, params), params)
   end
 
   def get_request(endpoint, params \\ []) do
