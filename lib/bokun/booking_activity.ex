@@ -66,8 +66,8 @@ defmodule Bokun.Booking.Activity do
     }
   })
   """
-  def reserve_and_confirm(body, params \\ %{}) do
-      Bokun.post_request("/booking.json/activity-booking/reserve-and-confirm", body, set_default_currency_and_lang(params))
+  def reserve_and_confirm(body) do
+      Bokun.post_request("/booking.json/activity-booking/reserve-and-confirm", body)
   end
 
   defp set_default_currency_and_lang(params) do

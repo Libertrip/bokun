@@ -13,11 +13,11 @@ defmodule Bokun do
     Bokun.Supervisor.start_link
   end
 
-  def post_request(endpoint, body \\ [], params \\ []) do
+  def post_request(endpoint, body \\ %{}, params \\ %{}) do
     Bokun.post!(endpoint, Poison.encode!(body), parse_headers("POST", endpoint, params), [params: params])
   end
 
-  def get_request(endpoint, params \\ []) do
+  def get_request(endpoint, params \\ %{}) do
     header = parse_headers("GET", endpoint, params)
     Bokun.get!(endpoint, header, [params: params])
   end

@@ -19,7 +19,7 @@ defmodule Bokun.Booking do
   @doc """
     Cancel Product Booking
   ## Example
-      Bokun.Booking.cancel_booking("ICT-T5312", %{
+      Bokun.Booking.cancel_product_booking("ICT-T5312", %{
         "note": "We want to cancel.",
         "refund": true,
         "notify": true
