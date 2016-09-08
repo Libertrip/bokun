@@ -32,12 +32,28 @@ defmodule Bokun.Activity do
   end
 
   @doc """
-  Get avaibility about specific activity
+  Search on All Activity
   ## Example
-      Bokun.Activity.search()
+      Bokun.Activity.search(%{})
   """
   def search(body \\ %{}, params \\ %{}) do
     Bokun.post_request("/activity.json/search", body, set_default_currency_and_lang(params))
+  end
+
+  @doc """
+  Check how much an activity booking would cost
+  ## Example
+      Bokun.Activity.check_price(%{
+        "activityId": 10305,
+        "startTimeId": 28745,
+        "date": "2011-11-11",
+        "pricingCategoryBookings": [
+          %{"pricingCategoryId": "6977"}
+        ]
+      })
+  """
+  def check_price(body, params \\ %{}) do
+    Bokun.post_request("/activity.json/check-prices", body, set_default_currency_and_lang(params))
   end
 
   defp set_default_lang(params) do
