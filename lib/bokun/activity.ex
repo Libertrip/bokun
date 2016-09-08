@@ -31,6 +31,15 @@ defmodule Bokun.Activity do
     Bokun.get_request("/activity.json/#{id}/availabilities", set_default_currency_and_lang(params))
   end
 
+  @doc """
+  Get avaibility about specific activity
+  ## Example
+      Bokun.Activity.search()
+  """
+  def search(body \\ %{}, params \\ %{}) do
+    Bokun.post_request("/activity.json/search", body, set_default_currency_and_lang(params))
+  end
+
   defp set_default_lang(params) do
     Map.merge %{lang: "FR"}, params
   end

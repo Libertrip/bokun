@@ -14,7 +14,7 @@ defmodule Bokun do
   end
 
   def post_request(endpoint, body \\ [], params \\ []) do
-    Bokun.post!(endpoint, Poison.encode!(body), parse_headers("POST", endpoint, params), params)
+    Bokun.post!(endpoint, Poison.encode!(body), parse_headers("POST", endpoint, params), [params: params])
   end
 
   def get_request(endpoint, params \\ []) do
@@ -33,7 +33,9 @@ defmodule Bokun do
   end
 
   def process_response_body(body) do
-    JSX.decode!(body)
+    Poison.decode!(body)
+  rescue
+    _ -> body
   end
 
   def access_key do
