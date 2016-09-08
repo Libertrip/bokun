@@ -44,11 +44,11 @@ defmodule Bokun.Activity do
   Check how much an activity booking would cost
   ## Example
       Bokun.Activity.check_price(%{
-        "activityId": 10305,
-        "startTimeId": 28745,
-        "date": "2011-11-11",
+        "activityId": 283,
+        "startTimeId": 639,
+        "date": "2011-11-01",
         "pricingCategoryBookings": [
-          %{"pricingCategoryId": "6977"}
+          %{"pricingCategoryId": "134"}
         ]
       })
   """
