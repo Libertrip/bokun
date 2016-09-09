@@ -16,13 +16,13 @@ defmodule Bokun.Mixfile do
 
 
   def application do
-    [applications: [:logger, :httpoison, :poison, :timex],
+    [applications: [:logger, :hackney, :poison, :timex],
      mod: {Bokun, []}]
   end
 
   defp deps do
     [
-      {:httpoison, "~> 0.9.0"},
+      {:tesla, "~> 0.5.1"},
       {:poison, "~> 2.2"},
       {:timex, "~> 3.0"}
     ]
