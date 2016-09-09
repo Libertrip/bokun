@@ -56,6 +56,15 @@ defmodule Bokun.Activity do
     Bokun.post_request("/activity.json/check-prices", body, set_default_currency_and_lang(params))
   end
 
+  @doc """
+    Get a list of the places offered as pick up / drop off places for the Activity with the ID supplied.
+    ## Example
+      Bokun.Activity.pickup_places(283)
+  """
+  def pickup_places(id, params \\ %{}) do
+    Bokun.get_request("/activity.json/#{id}/pickup-places", set_default_currency_and_lang(params))
+  end
+
   defp set_default_lang(params) do
     Map.merge %{lang: "FR"}, params
   end
