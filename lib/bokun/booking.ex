@@ -29,6 +29,15 @@ defmodule Bokun.Booking do
     Bokun.post_request("/booking.json/cancel-product-booking/#{production_confirmation_code}", body, set_default_currency_and_lang(params))
   end
 
+  @doc """
+    Get Summary of Booking
+    ## Example
+    Bokun.Booking.summary(8600)
+  """
+def summary(booking_id) do
+    Bokun.get_request("/booking.json/#{booking_id}/summary")
+  end
+
   defp set_default_currency_and_lang(params) do
     Map.merge %{currency: "EUR", lang: "FR"}, params
   end
