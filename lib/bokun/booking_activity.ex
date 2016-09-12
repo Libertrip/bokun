@@ -79,4 +79,13 @@ defmodule Bokun.Booking.Activity do
     Bokun.get_request("/booking.json/activity-booking/#{activity_booking_id}/ticket")
   end
 
+  @doc """
+    Get Booking by confirmation code
+    ## Example
+    Bokun.Booking.Activity.find_by_confirmation_code("ICT-T5338")
+  """
+  def find_by_confirmation_code(confirmation_code) do
+    Bokun.get_request("/booking.json/activity-booking/#{confirmation_code}")
+  end
+
 end
