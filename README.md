@@ -27,3 +27,6 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 ```
   iex> Bokun.start
 ```
+## Documentation Bokun
+  * [Swagger Api Test](https://bokun.github.io/api-docs)
+  * [Documentation Bokun](https://docs.google.com/document/d/1tkLLqeAvVtRrDpsM1uJZJvhHg3EfsMw1z_SN8Lbe2Rs/pub)
