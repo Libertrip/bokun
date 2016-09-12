@@ -67,11 +67,16 @@ defmodule Bokun.Booking.Activity do
   })
   """
   def reserve_and_confirm(body) do
-      Bokun.post_request("/booking.json/activity-booking/reserve-and-confirm", body)
+    Bokun.post_request("/booking.json/activity-booking/reserve-and-confirm", body)
   end
 
-  defp set_default_currency_and_lang(params) do
-    Map.merge %{currency: "EUR", lang: "FR"}, params
+  @doc """
+    Get Ticket of Booking
+    ## Example
+    Bokun.Booking.Activity.ticket(5338)
+  """
+  def ticket(activity_booking_id) do
+    Bokun.get_request("/booking.json/activity-booking/#{activity_booking_id}/ticket")
   end
 
 end
