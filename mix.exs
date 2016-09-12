@@ -11,7 +11,10 @@ defmodule Bokun.Mixfile do
      version: "0.0.1",
      elixir: "~> 1.2",
      description: @description,
-     deps: deps]
+     package: package,
+     source_url: "https://github.com/Libertrip/Bokun",
+     deps: deps,
+     docs: [extras: ["README.md"]]]
   end
 
 
@@ -25,6 +28,14 @@ defmodule Bokun.Mixfile do
       {:tesla, "~> 0.5.1"},
       {:poison, "~> 2.2"},
       {:timex, "~> 3.0"}
+    ]
+  end
+
+  defp package do
+    [
+      maintainers: ["Maxime Raverdy"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/Libertrip/Bokun"}
     ]
   end
 end
