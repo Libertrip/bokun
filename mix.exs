@@ -27,7 +27,10 @@ defmodule Bokun.Mixfile do
     [
       {:tesla, "~> 0.5.1"},
       {:poison, "~> 2.2"},
-      {:timex, "~> 3.0"}
+      {:timex, "~> 3.0"},
+
+      # testing & docs
+      {:ex_doc, "~> 0.13.1", only: :dev}
     ]
   end
 
