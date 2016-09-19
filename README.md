@@ -2,8 +2,7 @@
 
   A Bokun wrapper for Elixir
 
-## Warning
-  This library is under development
+## NOTE: This library is alpha software, and still under development. Use at your own risk. API changes might occur without notice.
 
 ## Installation
 
