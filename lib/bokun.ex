@@ -12,6 +12,8 @@ defmodule Bokun do
   plug Tesla.Middleware.JSON
   plug Tesla.Middleware.DebugLogger
 
+  adapter Tesla.Adapter.Hackney
+
   def start(_type, _args) do
     Bokun.Supervisor.start_link
   end
