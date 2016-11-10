@@ -57,6 +57,10 @@ defmodule Bokun do
     current_time <> access_key <> method <> parse_path(endpoint, params)
   end
 
+  def parse_path(url, %{}) do
+    url
+  end
+
   def parse_path(url, params) do
     url <> "?" <> URI.encode_query(params)
   end
