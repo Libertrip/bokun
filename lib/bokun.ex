@@ -11,6 +11,7 @@ defmodule Bokun do
   plug Tesla.Middleware.BaseUrl,  Application.get_env(:bokun, :api_url) || "http://api.bokundemo.com"
   plug Tesla.Middleware.JSON
   plug Tesla.Middleware.DebugLogger
+  plug Bokun.Middleware.ExternalLogger
 
   adapter Tesla.Adapter.Hackney
 
